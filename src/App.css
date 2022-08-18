@@ -3,9 +3,47 @@
 }
 
 #main-header {
-
+  background-color: green;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 #main-heading {
-  margin: o;
+  margin: 0;
+  font-size: 40px;
+  color: white;
+}
+
+#selector-nav {
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#selector-nav > select {
+  font-size: 16px;
+  border-radius: 7px;
+}
+
+#country-detail {
+  width: 60%;
+  margin: auto;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+}
+
+#country-header {
+  margin: 0;
+}
+
+#country-header > h2 {
+  background-color: green;
+  margin: 0;
+  padding: 10px 0px;
+  color: white;
+}
+
+.flag-image {
+  height: 200px;
+  padding-top: 20px;
 }

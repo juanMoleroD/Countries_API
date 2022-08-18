@@ -33,11 +33,19 @@ const CountriesContainer = () => {
             <header id="main-header">
                 <h1 id="main-heading" >Exploring the Countries API</h1>
             </header>
-
-            <CountrySelector countries={countries} setSelectedCountry={setSelectedCountry}/>
-            <hr/>
-                {selectedCountry? <Country country={selectedCountry} addToFavourites={addToFavourites} countries={countries}/> : null}
-            <hr/>
+            <nav id="selector-nav">
+                <CountrySelector 
+                    countries={countries} 
+                    setSelectedCountry={setSelectedCountry}
+                />
+            </nav>
+            {selectedCountry ? 
+                <Country 
+                    country={selectedCountry} 
+                    addToFavourites={addToFavourites} 
+                    countries={countries}/>
+                : null
+            }
             {favourites.length > 0? <Favourites favourites={favourites} setSelectedCountry={setSelectedCountry}/> : null}
         </>
         
