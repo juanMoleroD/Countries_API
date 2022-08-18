@@ -1,3 +1,4 @@
+import './App.css';
 import CountriesContainer from './container/CountriesContainer';
 
 function App() {

@@ -30,7 +30,10 @@ const CountriesContainer = () => {
 
     return( 
         <>
-            <h1>I am a country Container</h1>
+            <header id="main-header">
+                <h1 id="main-heading" >Exploring the Countries API</h1>
+            </header>
+
             <CountrySelector countries={countries} setSelectedCountry={setSelectedCountry}/>
             <hr/>
                 {selectedCountry? <Country country={selectedCountry} addToFavourites={addToFavourites} countries={countries}/> : null}
