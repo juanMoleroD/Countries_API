@@ -39,8 +39,19 @@ const CountriesContainer = () => {
         return 0;
     }
 
+    const getTotalPopulation = () => {
+        let total = countries.reduce( 
+        (runningTotal, country) => {
+            return runningTotal + country.population;
+        }, 0);
+        return total;
+    }
+
+    const totalPopulation = getTotalPopulation().toLocaleString('en', {useGrouping:true});
+
+
     return( 
-        <>
+        <main>
             <header id="main-header">
                 <h1 id="main-heading" >Exploring the Countries API</h1>
             </header>
@@ -52,7 +63,9 @@ const CountriesContainer = () => {
                         setSelectedCountry={setSelectedCountry}
                     />
                 </div>
+            <h3 id="population-header">Total World Population:   {totalPopulation}</h3>
             </nav>
+            
             <div className="cards-container">
                 {selectedCountry ? 
                     <Country 
@@ -65,7 +78,7 @@ const CountriesContainer = () => {
                 }
                 {favourites.length > 0 ? <Favourites favourites={favourites} setSelectedCountry={setSelectedCountry}/> : null}
             </div>
-        </>
+        </main>
         
     )
 }
