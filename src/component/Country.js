@@ -4,12 +4,8 @@ const Country = ({country, addToFavourites, countries, setSelectedCountry}) => {
 
     const [neighbourCountries, setNeighbourCountries] = useState([])
 
-    const handleClickOnAddFavourite = () => {
-        addToFavourites();
-    }
-    const handleClickOfNeighbour = (event) => {
-        setSelectedCountry(neighbourCountries[event.target.value])
-    }
+    const handleClickOnAddFavourite = () => { addToFavourites() }
+    const handleClickOfNeighbour = (event) => { setSelectedCountry(neighbourCountries[event.target.value]) }
 
     const addNeighbourCountry = (countryToGetNeighboursFrom) => {
         let arrayOfCountries = []
@@ -27,38 +23,17 @@ const Country = ({country, addToFavourites, countries, setSelectedCountry}) => {
 
     let neigbourCountriesNode = neighbourCountries.map( (countryItem, index) => {
         return (
-                <li key={countryItem.cca3} onClick={handleClickOfNeighbour} value={index}>
-                    {countryItem.name.common} - {countryItem.population. toLocaleString('en', {useGrouping:true})}
-                </li>
+            <li key={countryItem.cca3} onClick={handleClickOfNeighbour} value={index}>
+                {countryItem.name.common} - {countryItem.population. toLocaleString('en', {useGrouping:true})}
+            </li>
         ) 
     });
 
-    // if ("borders" in country) {
-    //     countries.forEach( (countryListItem) => {
-    //         if (country.borders.includes(countryListItem.cca3)) {
-    //             neigbourCountriesNode.push(
-    //                 <li key={countryListItem.cca3} onClick={handleClickOfNeighbour} value={neigbourCountriesNode.length}>
-    //                     {countryListItem.name.common} - {countryListItem.population. toLocaleString('en', {useGrouping:true})}
-    //                 </li>
-    //             )
-    //         }
-    //     })
-    // }
-
-
-    
-
-    
-
-    
-    
-    
-
     return (
         <div className="card-detail">
-            <heading className="card-header">
+            <header className="card-header">
                 <h2>{country.name.official}</h2>
-            </heading>
+            </header>
             <img alt="Flag" src={country.flags.png} className="flag-image"/>
             <p>Region: {country.region}</p>
             <p>Population: {country.population.toLocaleString('en', {useGrouping:true})}</p>

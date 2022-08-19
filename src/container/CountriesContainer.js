@@ -27,7 +27,8 @@ const CountriesContainer = () => {
             .then(countryObjectsArray => {
                 countryObjectsArray.sort(sortCountriesByCommonName);
                 setCountries(countryObjectsArray);
-            });
+            }
+        );
     }
 
     const sortCountriesByCommonName = (a, b) => {
