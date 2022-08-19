@@ -12,8 +12,10 @@ const Favourites = ({favourites, setSelectedCountry, addToFavourites}) => {
 
 
     return (
-        <section id="favourites-card">
-            <h2>I am the favourites</h2>
+        <section className="card-detail favourites-card">
+            <header className="card-header">
+                <h2>Your Favourites</h2>
+            </header>
             <ul>
                 {favouriteCountryNodes}
             </ul>

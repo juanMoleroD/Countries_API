@@ -34,19 +34,26 @@ const CountriesContainer = () => {
                 <h1 id="main-heading" >Exploring the Countries API</h1>
             </header>
             <nav id="selector-nav">
-                <CountrySelector 
-                    countries={countries} 
-                    setSelectedCountry={setSelectedCountry}
-                />
+                <h3>Select a country:</h3>
+                <div>
+                    <CountrySelector 
+                        countries={countries} 
+                        setSelectedCountry={setSelectedCountry}
+                    />
+                </div>
             </nav>
-            {selectedCountry ? 
-                <Country 
-                    country={selectedCountry} 
-                    addToFavourites={addToFavourites} 
-                    countries={countries}/>
-                : null
-            }
-            {favourites.length > 0? <Favourites favourites={favourites} setSelectedCountry={setSelectedCountry}/> : null}
+            <div className="cards-container">
+                {selectedCountry ? 
+                    <Country 
+                        country={selectedCountry} 
+                        addToFavourites={addToFavourites} 
+                        countries={countries}
+                        setSelectedCountry={setSelectedCountry}
+                    />
+                    : null
+                }
+                {favourites.length > 0 ? <Favourites favourites={favourites} setSelectedCountry={setSelectedCountry}/> : null}
+            </div>
         </>
         
     )

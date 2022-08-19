@@ -2,10 +2,16 @@
   text-align: center;
 }
 
+body {
+  background-color: rgb(235, 240, 235);
+}
+
 #main-header {
+  text-align: left;
   background-color: green;
   padding-top: 30px;
   padding-bottom: 20px;
+  padding-left: 50px
 }
 
 #main-heading {
@@ -15,35 +21,72 @@
 }
 
 #selector-nav {
-
+  display:flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
+
+}
+
+#selector-nav > h3 {
+  padding-right: 20px;
 }
 
 #selector-nav > select {
   font-size: 16px;
   border-radius: 7px;
+  
 }
 
-#country-detail {
-  width: 60%;
-  margin: auto;
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card-detail {
+  background-color: white;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
   padding-bottom: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
   box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
 }
 
-#country-header {
+.card-header {
   margin: 0;
+
+
 }
 
-#country-header > h2 {
+.card-header > h2 {
   background-color: green;
   margin: 0;
   padding: 10px 0px;
   color: white;
+
+}
+
+.card-detail > ul {
+  list-style: none;
 }
 
 .flag-image {
   height: 200px;
-  padding-top: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+}
+
+.favourites-card {
+  width: 30%;
+}
+
+.favourites-card > ul {
+  list-style: none;
+  font-size: 30px;
 }
