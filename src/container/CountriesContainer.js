@@ -18,14 +18,24 @@ const CountriesContainer = () => {
         return
     }
     
-
     useEffect( () => {getCountries()}, []);
 
     const getCountries = () => {
         fetch("https://restcountries.com/v3.1/all")
             .catch(error => console.error)
             .then(response => response.json())
-            .then(data => setCountries(data));
+            .then(countryObjectsArray => {
+                countryObjectsArray.sort(sortCountriesByCommonName);
+                setCountries(countryObjectsArray);
+            });
+    }
+
+    const sortCountriesByCommonName = (a, b) => {
+        const countryNameA = a.name.common.toUpperCase();
+        const countryNameB = b.name.common.toUpperCase();
+        if (countryNameA < countryNameB) {return -1}
+        if (countryNameA > countryNameB) {return 1}
+        return 0;
     }
 
     return( 
